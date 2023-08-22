@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS public.collections
         ON UPDATE NO ACTION
         ON DELETE NO ACTION
         NOT VALID
-)
+);
 
 
 CREATE TABLE IF NOT EXISTS public.users
@@ -35,20 +35,4 @@ CREATE TABLE IF NOT EXISTS public.users
     update_at timestamp without time zone,
     CONSTRAINT users_pkey PRIMARY KEY (id)
 );
-
-
--- CREATE TABLE IF NOT EXISTS public.collections
--- (
---     id bigserial NOT NULL,
---     id_material bigint NOT NULL,
---     quantity integer NOT NULL,
---     collection_date time without time zone NOT NULL DEFAULT CURRENT_TIMESTAMP,
---     updated_at time without time zone,
---     CONSTRAINT recolections_pkey PRIMARY KEY (id_material),
---     CONSTRAINT fk_id_material FOREIGN KEY (id_material)
---         REFERENCES public.materials (id) MATCH SIMPLE
---         ON UPDATE NO ACTION
---         ON DELETE NO ACTION
--- );
-
 
