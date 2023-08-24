@@ -16,7 +16,7 @@ export class CreateCollectionController {
     const transaction = await this.#dbInstance.db.transaction();
 
     try {
-      // Verificar si el material existe en la tabla materials
+      // Verificar si el material existe en la tabla materials es decir si no existe un material con el id:8 , por ejenplo , no puedes crear un colection con un id no existente en la tabla de colecciones
       const materialExists = await this.#dbInstance.db.query(
         "SELECT id FROM public.materials WHERE id = :id_material",
         {
